@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/') #index
 def dashBorad():
 
-    message = ' Welcome to the Make Store '
+    message = ' Welcome to the Pure '
 
     return(message)
 
