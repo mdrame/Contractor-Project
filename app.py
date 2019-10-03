@@ -8,9 +8,9 @@ app = Flask(__name__)
 @app.route('/') #index
 def dashBorad():
 
-    message = ' Welcome to the Pure '
+    message = 'Welcome to the Pure | 🌹'
 
-    return(message)
+    return render_template("home.html", message=message)
 
 
 if __name__ == '__main__':
