@@ -1,9 +1,63 @@
 <!-- templates/playlists_index.html -->
-{% extends 'base.html' %}
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Pure | View - Item </title>
+       
+        <style>
+            
+            #viewItemWrap{
+                width: 70%;
+                height: 500px;
+                background: palevioletred;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 50px;
+            }
 
-{% block content %}
-    
-    {% for product in products %}
+            #mainItemWrap{
+
+                width: 50%;
+                height: auto;
+                background: yellow;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            #mainItemWrap img{
+
+                width: 100%;
+                height: 300PX;
+                background: yellow;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
         
-    {% endfor %}
-{% endblock %}
+        </style>
+       
+    </head>
+
+    
+    <body>
+
+     
+            {% for product in products %}
+            <div id="viewItemWrap">
+                <div id="mainItemWrap"> 
+                    <img src="https://images.unsplash.com/photo-1487035242901-d419a42d17af?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"/>
+                    <h1> {{ product.name }}</h1>   
+                    <h2> {{ product.price }} </h2> 
+                </div>  
+            </div> 
+            {% endfor %}
+
+
+    <body>
+
+    </body>
+
+</html>
+

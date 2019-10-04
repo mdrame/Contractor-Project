@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> 🌹 </title>
+        <title> Pure | 🌹 </title>
         <!-- css styling -->
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename="styles/mainpage.css")}}"">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
         <!-- bootstrap -->
        
     </head>
@@ -12,8 +12,9 @@
     <body>
 
         <div id="header">
-            <H1> Pure |  🛒💐 </H1>
-            <h2> Your number one online  stop shop for a Roses and flower  </h2>
+            <H1> <strong> Pure | 💐 </strong> </H1>
+            <a href="listingForm"><h4 class="chart"> List Item </h4></a>
+            <h2> <em> ♥️ Your number one online  stop & shop for all Roses and flowers </em></h2>
             <!-- <img src=https://images.unsplash.com/photo-1465405135012-6c24c343b9a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1627&q=80"/> -->
         </div>
 
@@ -21,16 +22,17 @@
         {% block content %} {% endblock %}
         
         <div id="productWrap">
-                <h1> Products </h1>
+                <h1 id="listing"> Listing  </h1>
 
                 <!-- dry code 🤦🏾‍♂️ -->
-
+            <a href="home">
                 <div id="imgWrap">
                     <img src="https://images.unsplash.com/photo-1465405135012-6c24c343b9a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1627&q=80"/> 
                     <h3> <span>Name:</span>  Pink Rose  </h3>
                     <h3> <span>Item price:</span> 5.00$ </h3>
                     <button> BUY </button>
                 </div>
+            </a>
 
                 <div id="imgWrap">
                     <img src="https://images.unsplash.com/photo-1464982326199-86f32f81b211?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"/>
