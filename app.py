@@ -6,12 +6,16 @@ app = Flask(__name__)
 
 # welcome to my word of code ♥️
 
+client = MongoClient()
+db = client.Pure
+listings = db.listings
+
 # products / a list individual  dictionarys 
-products = [ {"name": "Red rose", "price": " $5.00 "},
-             {"name": "Mix flower ", "price": "$10.00 "},
-             {"name": "Sun Flower ", "price": "$20.00"},
-             {"name": "Pink Rose", "price": "$15.00"},
-             {"name": "Heart", "price": "$12.00"} ]
+# products = [ {"name": "Red rose", "price": " $5.00 "},
+#              {"name": "Mix flower ", "price": "$10.00 "},
+#              {"name": "Sun Flower ", "price": "$20.00"},
+#              {"name": "Pink Rose", "price": "$15.00"},
+#              {"name": "Heart", "price": "$12.00"} ]
 
 
 
@@ -29,7 +33,7 @@ def createListing():
 @app.route('/home')
 def viewItem():
 
-    return render_template('home.html', products=products)
+    return render_template('home.html', listings=listings.find())
 
 
 if __name__ == '__main__':
