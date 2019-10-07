@@ -97,13 +97,14 @@ h1{
         <h1> Create New Listing </h1>
 
             <div class="container">
-              <form action="/action_page.php">
+                <!-- back to where ? -->
+              <form method="POST" action="/listings"> 
                 <div class="row">
                   <div class="col-25">
                     <label for="fname"> Item Name: </label>
                   </div>
                   <div class="col-75">
-                    <input type="text" id="fname" name="firstname" placeholder="Item Name">
+                    <input type="text" id="fname" name="itemName" placeholder="Item Name">
                   </div>
                 </div>
                 <div class="row">
@@ -111,7 +112,7 @@ h1{
                     <label for="lname"> Item Price:</label>
                   </div>
                   <div class="col-75">
-                    <input type="text" id="lname" name="lastname" placeholder="Item Price">
+                    <input type="text" id="lname" name="itemPrice" placeholder="Item Price">
                   </div>
                 </div>
                 <div class="row">
@@ -131,11 +132,9 @@ h1{
                   </div>
                 </div>
                 <div class="row">
-                  <input type="submit" value="Submit">
+                  <input type="submit" value="Submit" name="submit">
                 </div>
-                <div id="rowDelete" class="row">
-                    <input id="rowDeleteInput" type="submit" value="Cancel">
-                  </div>
+                <a href="/"> Cancel </a> 
               </form>
             </div>
      
