@@ -43,14 +43,15 @@
     
     <body>
 
-     
-            {% for product in products %}
+            <a href="/"> Home | Dask board </a>
+            
             <div id="viewItemWrap">
-                    <a href="base.html"> Home | Dask board </a>
                 <div id="mainItemWrap"> 
+            <!-- {% for list in listing %}
                     <img src="https://images.unsplash.com/photo-1487035242901-d419a42d17af?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"/>
-                    <h1> {{ listings.itemName }}</h1>   
-                    <h2> {{ listings.itemPrice }} </h2> 
+            {% endfor %} -->
+                    <h1> {{ listing.title }}</h1>   
+                    <h2> {{ listing.price }} </h2> 
                 </div>  
                 <div class="row">
                         <input type="submit" value="Delete">
@@ -58,7 +59,8 @@
 
                       </div>
             </div> 
-            {% endfor %}
+           
+
 
 
         
