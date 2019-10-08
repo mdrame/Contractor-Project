@@ -31,7 +31,7 @@ def dashBoard():
 def listing():
 
     
-    return render_template('listingForm.html', listingTitle='Create Listing')
+    return render_template('listingForm.html', playlist={}, listingTitle='Create Listing')
 
 # this function / route is appendig the listing to my local mongo db
 @app.route('/listings', methods=['POST'])
@@ -41,13 +41,13 @@ def listing_submit():
     form name and price & inseart it into listings db '''
 
     # testing to see if infos from form was sent correctly
-    print(request.form.to_dict())
+    # print(request.form.to_dict())
 
     itemList = {'title': request.form.get('itemName'),
                 'price': request.form.get("itemPrice")}
 
     listing_id = listings.insert_one(itemList).inserted_id
-    return redirect(url_for('viewProduct', listing_id=listing_id, ))
+    return redirect(url_for('viewProduct', listing_id=listing_id))
 
 # route to view individual listing | Read in CRUD
 @app.route('/<listing_id>')
@@ -61,8 +61,8 @@ def listing_edit(listing_id):
     listing = listings.find_one({'_id': ObjectId(listing_id)})
     return render_template('listingForm.html', listing=listing, listingTitle="Edit Listing")
 
-
-@app.route('/listings/<listing_id>', methods=['POST'])
+# update_listing
+@app.route('/<listing_id>', methods=['POST'])
 def update_listing(listing_id):
 
     updated_listing = {
@@ -71,10 +71,17 @@ def update_listing(listing_id):
     }
 
     listings.update_one(
-        {'_id': ObjectId(playlist_id)}, 
-        {'$set': update_listing})
+        {'_id': ObjectId(listing_id)}, 
+        {'$set': updated_listing})
 
     return redirect(url_for('viewProduct', listing_id=listing_id))
+
+# delete listing route 
+@app.route('/<listing_id>/delete', methods=['POST'])
+def delete_listing(listing_id):
+
+    listings.delete_one({'_id': ObjectId(listing_id)})
+    return redirect(url_for('dashBoard'))
 
 if __name__ == '__main__':
     app.run(debug=True)
