@@ -94,11 +94,11 @@ h1{
 
 
             <!-- listing form -->
-        <h1> {{ listingTitle }} </h1>
+        <h1> Edit Listing </h1>
 
             <div class="container">
                 <!-- back to where ? -->
-              <form method="POST" action="/listings"> 
+              <form method="POST" action="/listings/{{listing._id}}"> 
                 <div class="row">
                   <div class="col-25">
                     <label for="fname"> Item Name: </label>
@@ -110,7 +110,7 @@ h1{
                 <div class="row">
                   <div class="col-25">
                     <label for="lname"> Item Price:</label>
-                  </div>
+                      </div>
                   <div class="col-75">
                     <input type="text" id="lname" name="itemPrice" placeholder="Item Price">
                   </div>

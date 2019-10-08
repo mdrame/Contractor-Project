@@ -31,7 +31,7 @@ def dashBoard():
 def listing():
 
     
-    return render_template('listingForm.html')
+    return render_template('listingForm.html', listingTitle='Create Listing')
 
 # this function / route is appendig the listing to my local mongo db
 @app.route('/listings', methods=['POST'])
@@ -47,7 +47,7 @@ def listing_submit():
                 'price': request.form.get("itemPrice")}
 
     listing_id = listings.insert_one(itemList).inserted_id
-    return redirect(url_for('viewProduct', listing_id=listing_id))
+    return redirect(url_for('viewProduct', listing_id=listing_id, ))
 
 # route to view individual listing | Read in CRUD
 @app.route('/<listing_id>')
@@ -56,7 +56,25 @@ def viewProduct(listing_id):
     listing = listings.find_one({'_id': ObjectId(listing_id)})
     return render_template('viewProduct.html', listing=listing)
 
+@app.route('/<listing_id>/edit')
+def listing_edit(listing_id):
+    listing = listings.find_one({'_id': ObjectId(listing_id)})
+    return render_template('listingForm.html', listing=listing, listingTitle="Edit Listing")
 
+
+@app.route('/listings/<listing_id>', methods=['POST'])
+def update_listing(listing_id):
+
+    updated_listing = {
+        'title': request.form.get('itemName'),
+        'price': request.form.get('itemPrice')
+    }
+
+    listings.update_one(
+        {'_id': ObjectId(playlist_id)}, 
+        {'$set': update_listing})
+
+    return redirect(url_for('viewProduct', listing_id=listing_id))
 
 if __name__ == '__main__':
     app.run(debug=True)
