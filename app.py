@@ -22,7 +22,6 @@ listings = db.listings
 #              {"name": "Heart", "price": "$12.00"} ]
 
 
-
 @app.route('/') #index
 def dashBoard():
 
