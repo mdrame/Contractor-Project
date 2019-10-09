@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 # welcome to my word of code ♥️
-host = os.environ.get(" MONGODB_URL", " mongodb://localhost:27017/pure")
+host = os.environ.get(" MONGODB_URL", " mongodb://localhost:27017/Pure")
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 listings = db.listings
