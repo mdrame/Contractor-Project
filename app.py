@@ -2,14 +2,15 @@ from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 # this under help change Mongodb _id to an object 
 from bson.objectid import ObjectId
+import os
 
 
 app = Flask(__name__)
 
 # welcome to my word of code ♥️
-
-client = MongoClient()
-db = client.Pure
+host = os.environ.get(" MONGODB_URL", " mongodb://localhost:27017/Pure")
+client = MongoClient(host=host)
+db = client.get_default_database()
 listings = db.listings
 
 # products / a list individual  dictionarys 
