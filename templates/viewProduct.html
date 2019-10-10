@@ -10,7 +10,7 @@
             #viewItemWrap{
                 width: 70%;
                 height: 500px;
-                background: palevioletred;
+                /* background: palevioletred; */
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 50px;
@@ -20,7 +20,7 @@
 
                 width: 50%;
                 height: auto;
-                background: yellow;
+                /* background: yellow; */
                 margin-left: auto;
                 margin-right: auto;
 
@@ -30,10 +30,18 @@
 
                 width: 100%;
                 height: 300PX;
-                background: yellow;
+                /* background: yellow; */
                 margin-left: auto;
                 margin-right: auto;
 
+            }
+
+            h1{
+                border-bottom: 1px dashed black;
+            }
+
+            h2{
+                border-bottom: 1px dashed black;
             }
         
         </style>
@@ -52,6 +60,7 @@
             {% endfor %} -->
                     <h1> {{ listing.title }}</h1>   
                     <h2> {{ listing.price }} </h2> 
+                    <img src="https://target.scene7.com/is/image/Target/GUEST_2e363baa-8888-4d0c-a8ad-99e680f4cdac?wid=488&hei=488&fmt=pjpeg"/>
                 </div>  
                 <a href="/{{listing._id }}/edit"> Edit </a>
                <form method="POST" action="/{{listing._id}}/delete">

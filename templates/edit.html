@@ -98,13 +98,13 @@ h1{
 
             <div class="container">
                 <!-- back to where ? -->
-              <form method="POST" action="/listings/{{listing._id}}"> 
+              <form method="POST" action="/listings"> 
                 <div class="row">
                   <div class="col-25">
                     <label for="fname"> Item Name: </label>
                   </div>
                   <div class="col-75">
-                    <input type="text" id="fname" name="itemName" placeholder="Item Name">
+                    <input type="text" id="fname" name="itemName"  value='listing.title' placeholder="Item Name">
                   </div>
                 </div>
                 <div class="row">
@@ -112,7 +112,7 @@ h1{
                     <label for="lname"> Item Price:</label>
                       </div>
                   <div class="col-75">
-                    <input type="text" id="lname" name="itemPrice" placeholder="Item Price">
+                    <input type="text" id="lname" name="itemPrice" value='listing.price' placeholder="Item Price">
                   </div>
                 </div>
                 <div class="row">

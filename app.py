@@ -45,7 +45,8 @@ def listing_submit():
     # print(request.form.to_dict())
 
     itemList = {'title': request.form.get('itemName'),
-                'price': request.form.get("itemPrice")}
+                'price': request.form.get("itemPrice")
+                }
 
     listing_id = listings.insert_one(itemList).inserted_id
     return redirect(url_for('viewProduct', listing_id=listing_id))
