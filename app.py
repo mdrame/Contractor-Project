@@ -52,7 +52,7 @@ def listing_submit():
     return redirect(url_for('viewProduct', listing_id=listing_id))
 
 # route to view individual listing | Read in CRUD
-@app.route('/<listing_id>')
+@app.route('/listing/<listing_id>')
 def viewProduct(listing_id):
 
     listing = listings.find_one({'_id': ObjectId(listing_id)})

@@ -27,12 +27,12 @@
                 <!-- dry code 🤦🏾‍♂️ -->
             {% for listing in listings %}
                 <div id="imgWrap">
-                    <a href="/{{ listing._id }}">
+                    <a href="/listing/{{ listing._id }}">
                     <img src="https://target.scene7.com/is/image/Target/GUEST_2e363baa-8888-4d0c-a8ad-99e680f4cdac?wid=488&hei=488&fmt=pjpeg"/> 
                     </a>
                     <h3> <span>Name:</span>  {{listing.title}}  </h3>
                     <h3> <span>Item price:</span> {{listing.price}} </h3>
-                    <button><a href="/{{listing._id}}"> BUY</a></button>
+                    <button><a href="/listing/{{listing._id}}"> BUY</a></button>
 
                 </div>
             {% endfor %}
